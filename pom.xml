@@ -1,0 +1,84 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.spring-boot</groupId>
+	<artifactId>spring-boot</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	
+	<!-- spring-boot-starter-parent는 spring-boot 기반의 어플리케이션에 대한 의존성 및 플러그인을 제공해 주는 부모의 pom이다. -->
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+    	<version>2.0.6.RELEASE</version>
+	</parent>
+	
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
+	
+	<repositories>
+		<repository>
+			<id>spring-milestones</id>
+			<name>Spring Milestones</name>
+			<url>https://repo.spring.io/milestone</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+	
+	<pluginRepositories>
+		<pluginRepository>
+			<id>spring-milestones</id>
+			<name>Spring Milestones</name>
+			<url>https://repo.spring.io/milestone</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+	
+	<dependencies>
+		<!-- spring-boot-starter는 프로젝트 용도에 따라 custom이 단순화 된 의존성 디스크립터이다. -->
+		
+		<!-- 예로 하단의 spring-boot-starter-web은 spring-web 및 webmvc, hibernate, jackson 등이 dependency 되어 있고,
+			 spring-boot-starter-test는 junit 및 mockito, AssertJ 등의 단위테스트에 대한 프레임웍이 dependency 되어있다.
+			 spring-boot-starter-tomcat은 spring-boot에 임베디드 되어있는 tomcat을 사용하기 위한 dependency가 되어있다.
+		 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId> 
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency> 
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		
+		<!-- 개발의 편의성을 위한 lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.16.18</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+	
+	<build>
+		<plugins>
+			<!-- spring-boot-maven-plugin은 application이 jar 및 war로 빌드하지 않고서도 실행되도록 하며 나중에 배포 시 jar 및 war로 빌드되게 한다. -->
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+	
+</project>
