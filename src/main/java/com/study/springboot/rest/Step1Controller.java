@@ -14,4 +14,9 @@ public class Step1Controller {
 	public String getWelcome() {
 		return "Hello World";
 	}
+	
+	@GetMapping("/welcome-object")
+	public Welcome getWelcomeObject() {
+		return new Welcome("Hello World");
+	}
 }

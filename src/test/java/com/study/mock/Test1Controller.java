@@ -16,6 +16,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.MvcResult;
 
 import com.study.springboot.rest.Step1Controller;
 
@@ -29,7 +30,7 @@ public class Test1Controller {
 	
 	@Test
 	public void welcome() throws Exception {
-		mock.perform(
+		MvcResult result = mock.perform(
 				get("/welcome").accept(APPLICATION_JSON)
 		)
 		.andExpect(status().isOk())
@@ -37,6 +38,9 @@ public class Test1Controller {
 				content().string(
 						CoreMatchers.containsString("Hello World")
 					)
-			);
+			)
+		.andReturn();
+		
+		System.out.println(result.getResponse().getContentAsString());
 	}
 }
