@@ -1,0 +1,14 @@
+spring:
+  dataSource:
+    url: http://localhost:3306
+    username: root
+    password: 6327331cn
+    driverClassName: com.mysql.jdbc.Driver
+  
+security:
+  user:
+    name: babookjy
+    password: 1234
+
+application:
+  serviceUrl: http://service.real.com

@@ -1,5 +1,6 @@
 package com.study.springboot.rest;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -9,6 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
  * */
 @RestController
 public class Step1Controller {
+	
+	@Value("${security.user-name}")
+	String userName;
 
 	@GetMapping("/welcome")
 	public String getWelcome() {
@@ -17,6 +21,7 @@ public class Step1Controller {
 	
 	@GetMapping("/welcome-object")
 	public Welcome getWelcomeObject() {
+		String test = userName;
 		return new Welcome("Hello World");
 	}
 }

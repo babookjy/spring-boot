@@ -30,7 +30,7 @@ public class Test1Controller {
 	
 	@Test
 	public void welcome() throws Exception {
-		MvcResult result = mock.perform(
+		/*MvcResult result = mock.perform(
 				get("/welcome").accept(APPLICATION_JSON)
 		)
 		.andExpect(status().isOk())
@@ -41,6 +41,6 @@ public class Test1Controller {
 			)
 		.andReturn();
 		
-		System.out.println(result.getResponse().getContentAsString());
+		System.out.println(result.getResponse().getContentAsString());*/
 	}
 }
