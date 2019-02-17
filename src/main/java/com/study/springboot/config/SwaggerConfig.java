@@ -19,7 +19,7 @@ public class SwaggerConfig {
 
 	@Bean
 	public Docket api() {
-		System.out.println(">>>>>>>>>> " + properties.getName());
+		System.out.println(">>>>>>>>>>> " + properties.getName());
 		System.out.println(">>>>>>>>>> " + properties.getPassword());
 		System.out.println(">>>>>>>>>> " + properties.getServiceUrl());
 		
