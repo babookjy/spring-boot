@@ -21,7 +21,7 @@ public class Step1Controller {
 	
 	@GetMapping("/welcome-object")
 	public Welcome getWelcomeObject() {
-		String test = userName;
+		String test1 = userName;
 		return new Welcome("Hello World");
 	}
 }
