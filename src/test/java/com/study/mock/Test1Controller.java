@@ -18,11 +18,11 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 
-import com.study.springboot.rest.Step1Controller;
+import com.study.springboot.rest.WelcomeController;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(Test1Controller.class)
-@ContextConfiguration(classes = {Step1Controller.class}) 
+@ContextConfiguration(classes = {WelcomeController.class}) 
 public class Test1Controller {
 	
 	@Autowired
