@@ -1,4 +1,4 @@
-package com.study.springboot.rest;
+package com.study.boot.rest;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
